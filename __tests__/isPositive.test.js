@@ -1,4 +1,4 @@
-const isPositive = require("./isPositive");
+const isPositive = require("../utils/isPositive");
 
 describe("isPositive function", () => {
   test("should return true for positive numbers", () => {
