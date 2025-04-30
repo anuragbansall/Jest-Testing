@@ -19,8 +19,10 @@ test("spying on a method of an object", () => {
     video.play(); // Call the play method
 
     expect(spy).toHaveBeenCalled(); // Check if the spy was called
+    expect(spy).toHaveBeenCalledTimes(1); // Check if the spy was called once
     spy.mockRestore(); // Restore the original implementation of the play method
     video.play(); // Call the play method again to verify it works as expected
+    expect(spy).toHaveBeenCalledTimes(0); // Check if the spy was not called again after restoring
 })
 
 // Spying on methods allows you to track calls to the method, check arguments, and restore the original implementation if needed.
